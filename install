@@ -1,0 +1,10 @@
+# pstree
+yum install psmisc
+
+# telnet
+
+
+# ifconfig
+
+# wget
+yum install wget

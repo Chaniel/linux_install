@@ -8,3 +8,6 @@ yum install psmisc
 
 # wget
 yum install wget
+
+# openssl
+yum install openssl-devel

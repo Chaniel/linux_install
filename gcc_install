@@ -14,3 +14,8 @@ make
 make install
 
 # install MPFR
+see INSTALL file
+patch files, download patch file into source code directory, and run patch command ,patch -N -Z -p1 < ../allpatches
+
+
+

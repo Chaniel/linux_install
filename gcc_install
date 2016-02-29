@@ -1,0 +1,16 @@
+# install gcc
+gcc 5.3 download from gun.org
+configure: error: Building GCC requires GMP 4.2+, MPFR 2.4.0+ and MPC 0.8.0+.
+
+
+# install lzip
+
+
+# install gmp
+lzip -d gmp-6.1.0.tar.lz
+tar -xvf gmp-6.1.0.tar
+./configure
+make
+make install
+
+# install MPFR

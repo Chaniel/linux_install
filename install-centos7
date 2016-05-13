@@ -1,0 +1,34 @@
+# install
+minimal install, 300个左右的包。不选minimal可能会安装上gui程序。
+
+# network setup 
+1. 安装完后设置网络为桥接,
+2. 编辑配置文件
+需要设置ONBOOT=yes，其他配置项目不变
+3. restart network
+service network restart
+4. check ip addr
+ip addr
+
+[root@bogon ~]# cat /etc/sysconfig/network-scripts/ifcfg-enp0s3
+TYPE=Ethernet
+BOOTPROTO=dhcp
+DEFROUTE=yes
+PEERDNS=yes
+PEERROUTES=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_FAILURE_FATAL=no
+NAME=enp0s3
+UUID=bb00b67b-a2b8-4ac9-bcfa-1451f64194e3
+DEVICE=enp0s3
+ONBOOT=yes
+
+# software install
+遇到没有的命令可以选择yum install
+
+# no network, use local cd.

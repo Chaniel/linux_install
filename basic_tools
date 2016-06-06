@@ -1,3 +1,16 @@
 # locate
 yum install mlocate
 
+# pstree
+yum install psmisc
+
+# telnet
+
+
+# ifconfig
+
+# wget
+yum install wget
+
+# openssl
+yum install openssl-devel

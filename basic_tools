@@ -1,0 +1,3 @@
+# locate
+yum install mlocate
+

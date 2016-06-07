@@ -15,6 +15,9 @@ yum install wget  -y
 # netstat
 yum install net-tools -y
 
+# lsof
+yum install lsof -y
+
 # openssl
 yum install openssl-devel  
 

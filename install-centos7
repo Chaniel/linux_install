@@ -32,3 +32,7 @@ ONBOOT=yes
 遇到没有的命令可以选择yum install
 
 # no network, use local cd.
+mkdir -p /mnt/cdrom
+mount /dev/cdrom /mnt/cdrom
+
+vim /etc/repo.conf

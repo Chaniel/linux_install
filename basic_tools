@@ -1,16 +1,20 @@
 # locate
-yum install mlocate
+yum install mlocate  -y
 
 # pstree
-yum install psmisc
+yum install psmisc  -y
 
 # telnet
-
+yum install telnet -y
 
 # ifconfig
 
 # wget
-yum install wget
+yum install wget  -y
+
+# netstat
+yum install net-tools -y
 
 # openssl
-yum install openssl-devel
+yum install openssl-devel  
+

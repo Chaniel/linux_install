@@ -1,0 +1,5 @@
+cd /etc/sysconfig/network-scripts/
+cp ifcfg-eth1 ifcfg-etc1:0
+vim  ifcfg-etc1:0
+device=etc1:0
+service network restart

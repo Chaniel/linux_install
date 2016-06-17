@@ -1,0 +1,4 @@
+# 解决ssh登录慢的问题
+vim /etc/ssh/sshd_config
+UseDNS no
+service sshd restart

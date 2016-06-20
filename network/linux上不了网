@@ -1,0 +1,48 @@
+# 上网本身涉及三层路由，二层寻址过程。
+
+# 4部曲
+
+# 1. ping loopback 
+ping 127.0.0.1
+
+# 2. ping 本机IP
+ping 192.168.0.2
+
+# 3. ping 网关
+ping 192.168.0.1
+
+# 4. ping 外网IP
+ping 8.8.8.8
+ping baidu.com
+
+
+虚拟机安装完成后，首先配置IP地址。
+虚拟机设置为桥接
+手动指定一个IP地址
+cat /etc/sysconfig/network-scripts/ifcfg-eth0
+DEVICE="eth0"
+BOOTPROTO=static
+ONBOOT=yes
+HWADDR=08:00:27:DE:DE:2B
+TYPE=Ethernet
+UUID=0b30d4cd-bdf1-46ba-b3b9-00d1d8b94fb
+NM_CONTROLLED="yes"
+IPADDR=192.168.0.32
+NETMASK=255.255.255.0
+GATEWAY=192.168.0.1
+
+
+# 如果已经设置好了IP，检查是否还有其他网关优先于本网关，如果有，删除其他网关。
+route -n
+[root@dev32 network-scripts]# route -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+192.168.2.0     0.0.0.0         255.255.255.0   U     0      0        0 eth0
+192.168.0.0     0.0.0.0         255.255.255.0   U     0      0        0 eth0
+10.1.0.0        0.0.0.0         255.255.240.0   U     0      0        0 eth0
+169.254.0.0     0.0.0.0         255.255.0.0     U     1002   0        0 eth0
+0.0.0.0         10.1.0.1        0.0.0.0         UG    0      0        0 eth0
+0.0.0.0         192.168.0.1     0.0.0.0         UG    0      0        0 eth0
+
+如上所示，有一个10.1.0.1优先于本网关，这样会导致上不了网。删除10段的网关即可。
+

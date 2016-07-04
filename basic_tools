@@ -21,3 +21,4 @@ yum install lsof -y
 # openssl
 yum install openssl-devel  
 
+yum install ntpdate
